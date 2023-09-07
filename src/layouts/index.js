@@ -10,7 +10,7 @@ import {
 } from "components";
 import { fetchWord } from "utils";
 
-let defaultWord = "design";
+let defaultWord = "natural";
 
 export const AppLayout = () => {
   const [isPlaying, setIsPlaying] = useState(false);
