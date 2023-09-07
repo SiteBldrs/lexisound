@@ -1,0 +1,13 @@
+.error_container {
+  width: max-content;
+  padding: 0.7rem 1.3rem;
+  background-color: #ff000024;
+  border-radius: 0.3rem;
+  border: 1px solid #ff00008d;
+  margin-top: 1rem;
+
+  span {
+    font-size: 1.4rem;
+    color: red;
+  }
+}

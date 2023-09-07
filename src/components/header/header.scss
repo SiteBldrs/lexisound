@@ -1,0 +1,27 @@
+.header_container {
+  width: 100%;
+  padding: 1rem 0;
+
+  .header_logo {
+    gap: 0.5rem;
+    color: var(--purple-main);
+    cursor: var(--pointer);
+
+    svg {
+      font-size: 2rem;
+    }
+
+    h2 {
+      font-size: 1.8rem;
+    }
+  }
+
+  .history_toggle {
+    cursor: var(--pointer);
+
+    svg {
+      font-size: 2rem;
+      color: var(--black-main);
+    }
+  }
+}

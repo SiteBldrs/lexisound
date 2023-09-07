@@ -1,0 +1,291 @@
+.word_container {
+  width: 100%;
+  height: 100%;
+
+  .word_result {
+    gap: 3rem;
+    flex: 1;
+
+    .word_header {
+      gap: 2rem;
+      width: 100%;
+
+      .word {
+        flex: 1;
+        gap: 0.5rem;
+
+        h1 {
+          flex: 1;
+          font-size: 3.5rem;
+          color: var(--black-main);
+          display: -webkit-box;
+          -webkit-line-clamp: 1;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
+          word-break: break-all;
+        }
+
+        p {
+          font-weight: 500;
+          font-size: 1.6rem;
+          color: var(--purple-main);
+        }
+      }
+
+      .word_audio {
+        cursor: var(--pointer);
+        width: 5.5rem;
+        height: 5.5rem;
+        border-radius: 50%;
+        background-color: var(--purple-tint-1);
+
+        svg {
+          font-size: 2.5rem;
+          color: var(--purple-main);
+        }
+
+        &:disabled {
+          opacity: 0.7;
+          cursor: progress;
+
+          svg {
+            opacity: inherit;
+          }
+        }
+      }
+    }
+
+    .meanings_content {
+      width: 100%;
+      gap: 2rem;
+
+      .meanings {
+        gap: 0.7rem;
+
+        .separator {
+          width: 100%;
+          padding: 0.5rem 0;
+          position: sticky;
+          top: 6.4rem;
+          background-color: var(--white-main);
+
+          h3 {
+            font-style: italic;
+            font-size: 1.5rem;
+            color: var(--black-tint-2);
+            background-color: var(--white-main);
+            padding-right: 1rem;
+          }
+
+          span {
+            z-index: -1;
+            height: 0.1rem;
+            background-color: var(--white-tint-1);
+            width: 100%;
+            top: 50%;
+            transform: translateY(-50%);
+          }
+
+          @media screen and (max-width: 768px) {
+            max-width: 50rem;
+            margin: 0 auto;
+            justify-content: center;
+
+            h3 {
+              padding: 0.3rem 1.5rem;
+              font-size: 2rem;
+            }
+          }
+        }
+
+        .definition_content {
+          .def {
+            font-size: 1.4rem;
+            font-weight: 500;
+            color: var(--black-tint-2);
+            margin: 0.5rem 0;
+          }
+
+          .definitions_lists {
+            gap: 0.5rem;
+
+            p {
+              font-size: 1.4rem;
+              color: var(--purple-main);
+              line-height: 2.2rem;
+            }
+
+            .def {
+              margin-top: 0;
+            }
+
+            .definitions {
+              padding-left: var(--px);
+              gap: 1rem;
+
+              .examples {
+                padding-left: var(--px);
+
+                p {
+                  padding-left: var(--px);
+                  color: var(--black-main);
+                }
+              }
+            }
+          }
+        }
+
+        .synonyms {
+          gap: 1rem;
+          padding: 0.3rem 0;
+
+          .synonyms_content {
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 0.3rem;
+
+            span {
+              background-color: var(--purple-tint-1);
+              color: var(--purple-main);
+              padding: 0.1rem 0.7rem;
+              border-radius: 2rem;
+              font-size: 1.2rem;
+              font-weight: 500;
+              text-transform: lowercase;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.isLoading {
+  .word_result {
+    .word_header {
+      flex: 1;
+
+      .word {
+        flex: 1;
+
+        h1,
+        p {
+          border-radius: 3rem;
+          animation: loading 1s infinite alternate;
+        }
+
+        h1 {
+          height: 2rem;
+          width: 15rem;
+        }
+
+        p {
+          height: 1.3rem;
+          width: 7rem;
+        }
+      }
+      .word_audio {
+        cursor: default;
+        animation: loading 1s infinite alternate;
+      }
+    }
+
+    .meanings_content {
+      .meanings {
+        .separator {
+          h3 {
+            border-radius: 3rem;
+            height: 1.3rem;
+            width: 5rem;
+            animation: loading 1s infinite alternate;
+          }
+        }
+
+        .definition_content {
+          .def {
+            border-radius: 3rem;
+            height: 1.5rem;
+            animation: loading 1s infinite alternate;
+            min-width: 10rem;
+            width: 10rem;
+          }
+
+          .definitions_lists {
+            .definitions {
+              flex: 1;
+
+              .load_content {
+                gap: 0.5rem;
+                margin: 0.5rem 0;
+
+                p {
+                  width: 100%;
+                  height: 1.3rem;
+                  border-radius: 3rem;
+                  animation: loading 1s infinite alternate;
+
+                  &:nth-child(2) {
+                    width: 80%;
+                  }
+
+                  &:nth-child(3) {
+                    width: 50%;
+                  }
+                }
+              }
+
+              .examples {
+                flex: 1;
+
+                div {
+                  width: 100%;
+                  gap: 0.5rem;
+                  padding-left: var(--px);
+
+                  span {
+                    width: 100%;
+                    height: 1.3rem;
+                    border-radius: 3rem;
+                    animation: loading 1s infinite alternate;
+
+                    &:nth-child(2) {
+                      width: 80%;
+                    }
+
+                    &:nth-child(3) {
+                      width: 50%;
+                    }
+                  }
+                }
+              }
+            }
+          }
+
+          .synonyms_content {
+            flex: 1;
+
+            span {
+              width: 3rem;
+              height: 1.3rem;
+              border-radius: 3rem;
+              animation: loading 1s infinite alternate;
+            }
+          }
+        }
+
+        .synonyms {
+          gap: 2rem;
+        }
+      }
+    }
+  }
+}
+
+@keyframes loading {
+  0% {
+    background-color: var(--white-tint-1);
+  }
+  100% {
+    background-color: var(--white-tint-2);
+  }
+}

@@ -1,0 +1,46 @@
+.input_container {
+  position: sticky;
+  top: 0;
+  padding: 1rem 0 0.5rem;
+  margin-bottom: 1rem;
+  background-color: var(--white-main);
+  z-index: 1;
+
+  .input_holder {
+    height: 5rem;
+    width: 100%;
+
+    input {
+      background-color: var(--white-tint-1);
+      height: 100%;
+      width: 100%;
+      max-width: 50rem;
+      border-radius: 0.3rem;
+      padding: 0 2rem;
+      padding-right: 5rem;
+      font-size: 1.4rem;
+      font-weight: 400;
+      color: var(--black-main);
+      transition: max-width 0.3s ease, background-color 0.3s ease;
+
+      &:disabled {
+        color: var(--black-tint-2);
+        background-color: var(--white-tint-1);
+        pointer-events: none;
+      }
+
+      &:focus {
+        max-width: 100%;
+        background-color: var(--white-tint-2);
+      }
+    }
+
+    svg {
+      font-size: 2rem;
+      color: var(--black-tint-2);
+      top: 50%;
+      transform: translateY(-50%);
+      right: 2rem;
+    }
+  }
+}
